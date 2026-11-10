@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Búsqueda de estudiantes por ID utilizando Promesas en JavaScript.">
+    <title>Búsqueda de estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <p class="eyebrow">Reto de JavaScript</p>
+            <h1>Búsqueda de estudiantes</h1>
+            <p class="subtitle">Consulta la información de un estudiante mediante su ID usando Promesas.</p>
+        </header>
+
+        <section class="panel" aria-labelledby="search-title">
+            <h2 id="search-title">Buscar estudiante</h2>
+            <form id="search-form">
+                <label for="student-id">ID del estudiante</label>
+                <div class="search-row">
+                    <input
+                        type="number"
+                        id="student-id"
+                        name="student-id"
+                        min="1"
+                        step="1"
+                        placeholder="Ej. 2"
+                        required
+                    >
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <div class="examples" aria-label="Ejemplos de búsqueda">
+                <span>Probar:</span>
+                <button class="example-button" type="button" data-id="2">ID 2</button>
+                <button class="example-button" type="button" data-id="1">ID 1</button>
+                <button class="example-button" type="button" data-id="10">ID 10</button>
+            </div>
+        </section>
+
+        <section class="panel result-panel" aria-labelledby="result-title">
+            <h2 id="result-title">Resultado</h2>
+            <div id="result" class="result empty" role="status" aria-live="polite">
+                Ingresa un ID para consultar un estudiante.
+            </div>
+        </section>
+
+        <section class="panel" aria-labelledby="students-title">
+            <h2 id="students-title">Estudiantes disponibles</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-table">
+                        <!-- Las filas se generan desde app.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+        </footer>
+    </main>
+</body>
+</html>
